@@ -1,0 +1,143 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="rounded-lg bg-white overflow-hidden shadow mt-6 font-[Poppins]">
+  <h2 class="sr-only" id="profile-overview-title">Corinn's start page</h2>
+  <div class="bg-white p-6">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <div class="sm:flex sm:space-x-5">
+        <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
+          <p class="text-sm font-medium text-gray-600 font-cursive">Welcome back!</p>
+          <p class="text-xl font-bold text-gray-900 sm:text-2xl  font-display"><%= Time.current.to_s(:long_ordinal) %></p>
+          <p class="text-sm font-medium text-gray-600">Remember, there is no speed limit</p>
+        </div>
+      </div>
+      <div class="mt-5  sm:mt-0">
+        <form action="https://www.google.com/search" class="flex flex-nowrap items-center justify-center space-x-2" method="get" name="searchform" target="_blank">
+          <div>
+            <input autocomplete="on" class="shadow-sm focus:ring-pink-500 focus:border-pink-500 block w-full sm:text-sm border-gray-300 rounded-md py-2 px-1" name="q" placeholder="Search the googs" required="required"  type="text">
+          </div>
+          <div>
+            <button class="flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="border-t border-gray-200 bg-gray-50 grid grid-cols-1 divide-y divide-gray-200 sm:grid-cols-3 sm:divide-y-0 sm:divide-x"> -->
+  <div class="border-t border-gray-200 bg-gray-50 grid grid-cols-1 divide-y divide-gray-200">
+    <div class="px-6 py-5 text-sm font-medium text-center">
+      <span class="text-gray-900"><%= (Date.new(2023,1,1) - Date.today).to_f.round(0) %></span>
+      <span class="text-gray-600">Days remaining in 2022. What needs to be done to create the future I want?</span>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="mt-4 mb-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 md:gap-4 font-[Poppins]">
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+      <h3 class="font-bold text-xl">Habits</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <form>
+        <ul>
+          <li><%= check_box_tag 'journal', "journal" %> Journal</li>
+          <li><%= check_box_tag 'meditate', "meditate" %> Meditate</li>
+          <li><%= check_box_tag 'exercise', 'exercise' %> Exercise</li>
+          <li><%= check_box_tag 'read', 'read' %> Read</li>
+          <li><%= check_box_tag 'fun_work', 'fun work' %> 1 hr of side project work</li>
+        </ul>
+      </form>
+    </div>
+  </div>
+
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+  <h3 class="font-bold text-xl">Horoscope</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <p class="text-sm"><%= @horoscope["description"] %></p>
+    </div>
+  </div>
+
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+  <h3 class="font-bold text-xl">Weather</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <ul class="list-none">
+        <img src='<%= @icon_url %>'>
+        <div>
+          <p><%= @weather["weather"].first["description"] %></p>
+          <p>Temp: <%= @weather["main"]["temp"].round(0) %>  Humidity: <%= @weather["main"]["humidity"] %></p>
+          <p>Low: <%= @weather["main"]["temp_min"].round(0) %>  High: <%= @weather["main"]["temp_max"].round(0) %></p>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+  <h3 class="font-bold text-xl">Work</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <ul class="list-none">
+        <li><%= link_to "Calendar", "https://calendar.google.com/calendar/u/0/r", target: :_blank %></li>
+        <li><%= link_to "Vinebase notifications","https://github.com/notifications?query=reason%3Aassign", target: :_blank %></li>
+        <li><%= link_to ":5000", "http://localhost:5000/", target: :_blank %></li>
+        <li><%= link_to "Open PRs", "https://github.com/Vinebase/vinebase/pulls/assigned/corinnpope", target: :_blank %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+  <h3 class="font-bold text-xl">Home</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <ul class="list-none">
+        <li><%= link_to "HEB", "https://www.heb.com", target: :_blank %></li>
+        <li><%= link_to "Amazon orders", "https://www.amazon.com/gp/css/order-history?ref_=nav_orders_first", target: :_blank %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+  <h3 class="font-bold text-xl">Time Wasters</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <ul class="list-none">
+        <li><%= link_to "Inoreader", "https://www.inoreader.com/all_articles", target: :_blank %></li>
+        <li><%= link_to "Digg", "https://www.digg.com", target: :_blank %></li>
+        <li><%= link_to "Copy Quad", "https://copy-quad.copyhackers.com", target: :_blank %></li>
+        <li><%= link_to "IndieHackers", "https://indiehackers.com", target: :_blank %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+  <h3 class="font-bold text-xl">Semiproductive</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <ul class="list-none">
+        <li><%= link_to "TweetDeck", "https://tweetdeck.twitter.com/", target: :_blank %></li>
+        <li><%= link_to "Track time", "https://track.toggl.com/timer", target: :_blank %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-span-2 lg:col-span-3 bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+    <div class="px-4 py-5 sm:px-6">
+  <h3 class="font-bold text-xl">Hacker News</h3>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+      <ul class="list-none">
+        <% @hn_stories.each do |story| %>
+        <li><%= link_to story[:title], story[:url], target: :_blank %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
