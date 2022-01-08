@@ -7,6 +7,8 @@ class StaticController < ApplicationController
     @horoscope = get_horoscope
   end
 
+  private
+
   def hn_stories
     stories = []
     @hn_stories = Faraday.get("https://hacker-news.firebaseio.com/v0/topstories.json")

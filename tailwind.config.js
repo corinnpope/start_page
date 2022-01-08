@@ -5,7 +5,6 @@ module.exports = {
       theme: {
          extend: {
           fontFamily: {
-            'cursive': '"Bebas Neue", cursive',
             sans: ['Poppins', ...defaultTheme.fontFamily.sans]
           }
          }
