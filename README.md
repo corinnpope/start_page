@@ -8,5 +8,4 @@ This is a simple start page for my personal use. Feel free to fork and create yo
 
 This one features some simple links, top hacker news stories, weather, and some other tidbits. 
 
-
-![Screenshot 2022-01-08 at 10-45-33 StartPage](https://user-images.githubusercontent.com/3298752/148652407-f395a765-2c26-478a-913a-14a8a2fd4fee.png)
+![Screenshot 2022-01-08 at 12-30-26 StartPage](https://user-images.githubusercontent.com/3298752/148657511-667bab20-32e5-4b4d-b8e6-d4cbff355215.png)
