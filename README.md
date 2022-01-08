@@ -1,24 +1,10 @@
-# README
+# Start page
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple start page for my personal use. Feel free to fork and create your own version.
 
-Things you may want to cover:
+This one features some simple links, top hacker news stories, weather, and some other tidbits. 
 
-* Ruby version
+It is a very basic rails 7 app - didn't even use postgres on this one - but I don't foresee it holding a lot of information and tracking lots of things. 
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Screenshot 2022-01-08 at 10-45-33 StartPage](https://user-images.githubusercontent.com/3298752/148652407-f395a765-2c26-478a-913a-14a8a2fd4fee.png)
